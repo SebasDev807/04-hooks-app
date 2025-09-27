@@ -12,8 +12,8 @@ Esta guía tiene como objetivo enseñar el uso de **Custom Hooks** y **Props** e
 1. Clonar el repositorio:
 
 ```bash
-git clone <url-del-repo>
-cd <nombre-del-repo>
+git clone https://github.com/SebasDev807/04-hooks-app.git)
+cd 04-hooks-app
 ```
 
 2. Instalar dependencias con pnpm:
@@ -54,7 +54,12 @@ Crear un contador que utiliza un **custom hook** llamado `useCounter`. El contad
 **Ejemplo de uso:**
 
 ```tsx
-const { counter, increment, decrement, reset } = useCounter({ initialValue: 0 });
+ const {
+        handleDecrement,
+        handleReset,
+        handleIncrement,
+        count
+    } = useCounter(1);
 ```
 
 ---
@@ -105,6 +110,7 @@ Se utiliza **React Router** para navegar entre los ejercicios:
 
 ```tsx
 <Routes>
+  <Route path="/" element={<Navigate to="/ejercicio_1" />} />
   <Route path="/ejercicio-1" element={<Ejercicio1 />} />
   <Route path="/ejercicio-2" element={<Ejercicio2 />} />
 </Routes>
